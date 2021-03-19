@@ -1,0 +1,15 @@
+How does this Machine-learning bankruptcy prediction tool works? Let us have an in-depth look. 
+
+Data Extract component crawls financial reports of thousands of China, USA companies periodically. The component then extracts interested information from the massive financial reports and generate extended financial indicators for which the downstream ML component need to analyze. 
+
+We make use of the Gitlab CI to build and deploy our source codes to AWS S3. This way we make our code deployment and integration with AWS easily and continuously.
+
+Our financial data is persisted on Amazon AWS S3, which is a cloud storage service helping us easily save and process the massive amount of financial data used for training by SageMaker component.
+
+We run our application, including the data extract component and ML training component on Amazon EC2, a virtual cloud computing environment.
+
+Making use of the SageMaker, which is an Amazon tool for easily creating and deploying ML models, we have our XGBoost based machine learning component train the financial data of the company and produce the result of a prediction of bankruptcy. 
+
+With the functionality of Amazon Lex, we build a conversational interfaces for our user. Users are able to interact with the bankruptcy prediction tool using natural language with either voice or text. 
+
+
